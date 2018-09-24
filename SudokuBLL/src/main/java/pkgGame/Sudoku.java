@@ -1,5 +1,10 @@
 package pkgGame;
 
+
+import java.lang.Math;
+import java.security.SecureRandom;
+import java.util.Random;
+
 import pkgHelper.LatinSquare;
 
 /**
@@ -156,7 +161,10 @@ public class Sudoku extends LatinSquare {
 		return reg;
 	}
 	
-	private boolean Sudoku_hasDuplicates()
+ 
+	
+	@Override
+	public boolean hasDuplicates()
 	{
 		if (super.hasDuplicates())
 			return true;
@@ -186,7 +194,7 @@ public class Sudoku extends LatinSquare {
 
 		this.setbIgnoreZero(true);
 		
-		if (Sudoku_hasDuplicates())
+		if (hasDuplicates())
 			return false;
 
 		if (!ContainsZero()) {
@@ -209,7 +217,7 @@ public class Sudoku extends LatinSquare {
 
 		this.setbIgnoreZero(false);
 		
-		if (Sudoku_hasDuplicates())
+		if (hasDuplicates())
 			return false;
 		
 		if (!super.isLatinSquare())
@@ -246,4 +254,43 @@ public class Sudoku extends LatinSquare {
 	public boolean isValidValue(int iCol, int iRow, int iValue) {
 		return false;
 	}
+	
+	public int getRegionNbr(int iCol, int iRow) {
+		
+		
+		return iRow;
+		
+	}
+	
+	private void shuffleArray(int[] ar) {
+	 
+		Random randNbr = new SecureRandom();
+		
+		for (int i = ar.length - 1; i > 0; i--) {
+			int index = randNbr.nextInt(i+1);
+			int a = ar[index];
+			ar[index] = ar[i];
+			ar[i] = a;
+		}
+			
+	 
+		
+		
+		
+		
+		
+		
+		
+	 
+	 
+ }
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
