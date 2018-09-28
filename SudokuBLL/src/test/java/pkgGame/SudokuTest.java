@@ -229,6 +229,7 @@ public class SudokuTest {
 			fail("Test failed to build a Sudoku");
 		}
 		
+<<<<<<< HEAD
 		
 		
 		
@@ -237,6 +238,8 @@ public class SudokuTest {
 		
 		
 		
+=======
+>>>>>>> 4e6193894c3d5af6b3b018b597730ff737c93e5b
 	}	
 
 }
