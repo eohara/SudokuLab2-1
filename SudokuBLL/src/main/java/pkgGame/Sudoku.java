@@ -251,46 +251,123 @@ public class Sudoku extends LatinSquare {
 	 *            given value
 	 * @return - returns 'true' if the proposed value is valid for the row and column
 	 */
+	
 	public boolean isValidValue(int iCol, int iRow, int iValue) {
-		return false;
+		if (doesElementExist(super.getRow(iRow),iValue))
+		{
+			return false;
+		}
+		if (doesElementExist(super.getColumn(iCol),iValue))
+		{
+			return false;
+		}
+		if (doesElementExist(this.getRegion(iCol, iRow),iValue))
+		{
+			return false;
+		}
+		
+		return true;
 	}
+
+//Start of Lab 3
 	
 	public int getRegionNbr(int iCol, int iRow) {
 		
+		int i = (iCol / iSqrtSize) + ((iRow / iSqrtSize) * iSqrtSize);
+
+		return i;
 		
-		return iRow;
+	}
+	
+	public void printPuzzle() {
+		
+		
 		
 	}
 	
 	private void shuffleArray(int[] ar) {
+		
+		//instance of SecureRanddom 
 	 
 		Random randNbr = new SecureRandom();
 		
+		//i goes through array length 
+		
 		for (int i = ar.length - 1; i > 0; i--) {
+		//indexes and assigns random numbers in array
+			
 			int index = randNbr.nextInt(i+1);
 			int a = ar[index];
 			ar[index] = ar[i];
 			ar[i] = a;
-		}
+		}}
+		
+	private void ShuffleRegion(int r) {
+		
+		//getRegion from the region number
+		
+		int [] region = getRegion(r);
+		
+		//shuffle the one dimensional array that is the regional array
+		
+		shuffleArray(region);
+		
+		//put i and j back into array after shuffling 
+
+		int j = (r % iSqrtSize) * iSqrtSize;
+		int i = (r / iSqrtSize) * iSqrtSize;
+		int jMax = j + iSqrtSize;
+		int iMax = i + iSqrtSize;
+
+		for (; i < iMax; i++) { 
 			
-	 //test
+			for (; j < jMax; j++) {
+				
+	}}}
+	
+	private void setRegion(int r) {
 		
+		//set value to 1
 		
+		int val = 1;
 		
-		
-		
-		
-		
-	 
-	 
- }
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		int j = (r % iSqrtSize) * iSqrtSize;
+		int i = (r / iSqrtSize) * iSqrtSize;
+		int jMax = j + iSqrtSize;
+		int iMax = i + iSqrtSize;
+
+		for (; i < iMax; i++) {
+			
+			for (; j < jMax; j++) {
+				
+				this.getPuzzle()[i][j] = val;
+				
+				// increment value
+				
+				val++;
+			}
+		}
 }
+	
+	private void FillDiagonalRegions()
+		{
+			//After the puzzle is created, set the diagonal regions with random values
+			
+			int rowIndex;
+			int colIndex;
+			for(int r = 0;r<iSize;r++)
+			{
+				rowIndex = r/iSqrtSize;
+				colIndex = r%iSqrtSize;
+				
+				if (rowIndex == colIndex)
+				{
+					setRegion(r);
+				}
+				
+				else
+				{
+					continue;
+		}}}}
+	
+
