@@ -3,6 +3,7 @@ package pkgGame;
 
 import java.lang.Math;
 import java.security.SecureRandom;
+import java.util.Arrays;
 import java.util.Random;
 
 import pkgHelper.LatinSquare;
@@ -270,6 +271,8 @@ public class Sudoku extends LatinSquare {
 	}
 
 //Start of Lab 3
+//Made all methods public because could not test private methods without reflection
+//Never covered reflection
 	
 	public int getRegionNbr(int iCol, int iRow) {
 		
@@ -281,11 +284,13 @@ public class Sudoku extends LatinSquare {
 	
 	public void printPuzzle() {
 		
-		
-		
-	}
-	
-	private void shuffleArray(int[] ar) {
+		for (int i=0; i < iSize;i++)
+			{
+				System.out.println(Arrays.toString(super.getRow(i)));
+			}
+		}
+
+	public void shuffleArray(int[] ar) {
 		
 		//instance of SecureRanddom 
 	 
@@ -297,12 +302,12 @@ public class Sudoku extends LatinSquare {
 		//indexes and assigns random numbers in array
 			
 			int index = randNbr.nextInt(i+1);
-			int a = ar[index];
+			int a = ar[index]; 
 			ar[index] = ar[i];
 			ar[i] = a;
 		}}
 		
-	private void ShuffleRegion(int r) {
+	public void ShuffleRegion(int r) {
 		
 		//getRegion from the region number
 		
@@ -325,7 +330,7 @@ public class Sudoku extends LatinSquare {
 				
 	}}}
 	
-	private void setRegion(int r) {
+	public void setRegion(int r) {
 		
 		//set value to 1
 		
@@ -349,7 +354,7 @@ public class Sudoku extends LatinSquare {
 		}
 }
 	
-	private void FillDiagonalRegions()
+	public void FillDiagonalRegions()
 		{
 			//After the puzzle is created, set the diagonal regions with random values
 			
