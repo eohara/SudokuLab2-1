@@ -275,7 +275,7 @@ public class SudokuTest {
 	}
 
 	@Test
-	public void PrintTest_1()
+	public void printPuzzle_test1()
 	{
 	
 	
@@ -301,7 +301,7 @@ public class SudokuTest {
 }
 
 	@Test
-	public void PrintTest_2()
+	public void printPuzzle_test2()
 	{
 	
 	
@@ -475,12 +475,6 @@ try {
 			fail("Failed to shuffle");
 		}
 	}
-	
-	
-	
-	
-	
-	
 	
 	
 }
