@@ -272,27 +272,61 @@ public class SudokuTest {
 		
 		assertEquals(iExpectedRegionNbr, puzzle.getRegionNbr(1,1), 1);
 	}
+//Did not know how to test void methods
+//Did not know how to use 'reflection' to write test methods for private methods
 
-	 @Test
+/*
+@Test
 	 
 
 	public void setRegion_test1() throws Exception {
 	
-	int[][] startPuzzle = {{0,0,0,0},{0,0,0,0},{0,0,0,0}};
-	
+	int[][] startPuzzle = {{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}};
+	 
 	Sudoku puzzle = new Sudoku(startPuzzle);
 	
 	System.out.println(Arrays.toString(puzzle.setRegion(2)));
 	
-	
+	/*Expect result along the lines of {{0,0,0,0},
+										{0,0,0,0},
+										{3,4,0,0}
+										{2,1,0,0}}
+										*/
+	 }
+	 
+/*	 @Test
+	 
 
+		public void setRegion_test2() throws Exception {
+		
+		int[][] startPuzzle = {{0,0,0,0},{0,0,0,0},{0,0,0,0}};
+		 
+		Sudoku puzzle = new Sudoku(startPuzzle);
+		
+		System.out.println(Arrays.toString(puzzle.setRegion(4)));	
 }
+	/* @Test
+	 
 
-
-	
-}
-	
-	
+		public void ShuffleRegion_test1() throws Exception {
+		
+		int[][] startPuzzle = {{0,0,0,0},
+				     		   {0,0,0,0},
+				     		   {1,2,0,0}
+				     		   {3,4,0,0}};
+			
+		 
+//		Sudoku puzzle = new Sudoku(startPuzzle);
+		
+		//System.out.println(Arrays.toString(puzzle.shuffleRegion(2)));	
+		
+		/*Expect result along the lines of {{0,0,0,0},
+						        			{0,0,0,0},
+											{4,2,0,0}
+											{3,1,0,0}}
+		*/
+		
+		
 	
 	
 

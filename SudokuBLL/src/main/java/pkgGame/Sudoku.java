@@ -329,7 +329,7 @@ public class Sudoku extends LatinSquare {
 			for (; j < jMax; j++) {
 				
 	}}}
-	
+	 
 	public void setRegion(int r) {
 		
 		//set value to 1
@@ -361,7 +361,7 @@ public class Sudoku extends LatinSquare {
 			int rowIndex;
 			int colIndex;
 			for(int r = 0;r<iSize;r++)
-			{
+			{ 
 				rowIndex = r/iSqrtSize;
 				colIndex = r%iSqrtSize;
 				
@@ -373,6 +373,6 @@ public class Sudoku extends LatinSquare {
 				else
 				{
 					continue;
-		}}}}
+}}}}
 	
 
