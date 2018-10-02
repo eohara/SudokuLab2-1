@@ -295,8 +295,9 @@ public class Sudoku extends LatinSquare {
 		//instance of SecureRanddom 
 	 
 		Random randNbr = new SecureRandom();
-		
+		 
 		//i goes through array length 
+
 		
 		for (int i = ar.length - 1; i > 0; i--) {
 		//indexes and assigns random numbers in array

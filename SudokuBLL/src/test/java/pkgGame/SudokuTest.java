@@ -226,7 +226,7 @@ public class SudokuTest {
 		assertTrue(Arrays.equals(Region5, s1.getRegion(5)));
 	}
 		
-	
+//beginning of tests for Lab 3	
 	
 	@Test
 	
@@ -476,6 +476,7 @@ try {
 		}
 	}
 	
+
 	
 }
 
