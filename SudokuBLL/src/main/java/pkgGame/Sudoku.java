@@ -267,7 +267,7 @@ public class Sudoku extends LatinSquare {
 			return false;
 		}
 		
-		return true;
+		return true; 
 	}
 
 //Start of Lab 3
