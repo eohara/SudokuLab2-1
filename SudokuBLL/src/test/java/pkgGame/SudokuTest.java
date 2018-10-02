@@ -250,7 +250,8 @@ public class SudokuTest {
 		
 		assertEquals(iExpectedRegionNbr, puzzle.getRegionNbr(6,7), 8);
 	}
-@Test
+	
+	@Test
 	
 	public void getRegionNbr_test2() throws Exception {
 		
@@ -272,63 +273,219 @@ public class SudokuTest {
 		
 		assertEquals(iExpectedRegionNbr, puzzle.getRegionNbr(1,1), 1);
 	}
-//Did not know how to test void methods
-//Did not know how to use 'reflection' to write test methods for private methods
 
-/*
-@Test
-	 
-
-	public void setRegion_test1() throws Exception {
+	@Test
+	public void PrintTest_1()
+	{
 	
-	int[][] startPuzzle = {{0,0,0,0},{0,0,0,0},{0,0,0,0},{0,0,0,0}};
-	 
-	Sudoku puzzle = new Sudoku(startPuzzle);
 	
-	System.out.println(Arrays.toString(puzzle.setRegion(2)));
+	int[][] puzzle = {
+			{ 1, 3, 5, 0, 0, 0, 0, 0, 0 },
+			{ 7, 9, 2, 0, 0, 0, 0, 0, 0 },
+			{ 4, 6, 8, 0, 0, 0, 0, 0, 0 },
+			{ 0, 0, 0, 2, 4, 6, 0, 0, 0 },
+			{ 0, 0, 0, 1, 3, 5, 0, 0, 0 },
+			{ 0, 0, 0, 7, 8, 9, 0, 0, 0 },
+			{ 0, 0, 0, 0, 0, 0, 9, 8, 7 },
+			{ 0, 0, 0, 0, 0, 0, 6, 5, 3 },
+			{ 0, 0, 0, 0, 0, 0, 1, 4, 2 } };
 	
-	/*Expect result along the lines of {{0,0,0,0},
-										{0,0,0,0},
-										{3,4,0,0}
-										{2,1,0,0}}
-										*/
-	 }
-	 
-/*	 @Test
-	 
-
-		public void setRegion_test2() throws Exception {
-		
-		int[][] startPuzzle = {{0,0,0,0},{0,0,0,0},{0,0,0,0}};
-		 
-		Sudoku puzzle = new Sudoku(startPuzzle);
-		
-		System.out.println(Arrays.toString(puzzle.setRegion(4)));	
+	
+	
+	try {
+		 Sudoku s1 = new Sudoku(puzzle);
+		 s1.printPuzzle();
+	} catch (Exception e) {
+		fail("Failed to print");
+	}		
 }
-	/* @Test
-	 
 
-		public void ShuffleRegion_test1() throws Exception {
-		
-		int[][] startPuzzle = {{0,0,0,0},
-				     		   {0,0,0,0},
-				     		   {1,2,0,0}
-				     		   {3,4,0,0}};
-			
-		 
-//		Sudoku puzzle = new Sudoku(startPuzzle);
-		
-		//System.out.println(Arrays.toString(puzzle.shuffleRegion(2)));	
-		
-		/*Expect result along the lines of {{0,0,0,0},
-						        			{0,0,0,0},
-											{4,2,0,0}
-											{3,1,0,0}}
-		*/
-		
-		
+	@Test
+	public void PrintTest_2()
+	{
 	
 	
+	int[][] puzzle = { 
+			{ 5, 3, 4, 6, 7, 8, 9, 1, 2 }, 
+			{ 6, 7, 2, 1, 9, 5, 3, 4, 8 }, 
+			{ 1, 9, 8, 3, 4, 2, 5, 6, 7 },
+			{ 8, 5, 9, 7, 6, 1, 4, 2, 3 }, 
+			{ 4, 2, 6, 8, 5, 3, 7, 9, 1 }, 
+			{ 7, 1, 3, 9, 2, 4, 8, 5, 6 },
+			{ 9, 6, 1, 5, 3, 7, 2, 8, 4 }, 
+			{ 2, 8, 7, 4, 1, 9, 6, 3, 5 }, 
+			{ 3, 4, 5, 2, 8, 6, 1, 7, 9 } };
+	
+	
+	
+	try {
+		 Sudoku s1 = new Sudoku(puzzle);
+		 s1.printPuzzle();
+	} catch (Exception e) {
+		fail("Failed to print");
+	}		
+}
+
+
+	@Test
+	public void shuffleRegionTest_1()
+	{int[][] puzzle = { 
+		{ 5, 3, 4, 6, 7, 8, 9, 1, 2 }, 
+		{ 6, 7, 2, 1, 9, 5, 3, 4, 8 }, 
+		{ 1, 9, 8, 3, 4, 2, 5, 6, 7 },
+		{ 8, 5, 9, 7, 6, 1, 4, 2, 3 }, 
+		{ 4, 2, 6, 8, 5, 3, 7, 9, 1 }, 
+		{ 7, 1, 3, 9, 2, 4, 8, 5, 6 },
+		{ 9, 6, 1, 5, 3, 7, 2, 8, 4 }, 
+		{ 2, 8, 7, 4, 1, 9, 6, 3, 5 }, 
+		{ 3, 4, 5, 2, 8, 6, 1, 7, 9 } };
+
+	try {
+	 Sudoku s1 = new Sudoku(puzzle);
+	 s1.ShuffleRegion(0);
+	 s1.printPuzzle();			 
+	} catch (Exception e) {
+	fail("Failed to shuffle");
+}		
+}
+
+	@Test
+	public void shuffleRegionTest_2()
+	{
+
+
+		int[][] puzzle = { 
+		{ 5, 3, 4, 6, 7, 8, 9, 1, 2 }, 
+		{ 6, 7, 2, 1, 9, 5, 3, 4, 8 }, 
+		{ 1, 9, 8, 3, 4, 2, 5, 6, 7 },
+		{ 8, 5, 9, 7, 6, 1, 4, 2, 3 }, 
+		{ 4, 2, 6, 8, 5, 3, 7, 9, 1 }, 
+		{ 7, 1, 3, 9, 2, 4, 8, 5, 6 },
+		{ 9, 6, 1, 5, 3, 7, 2, 8, 4 }, 
+		{ 2, 8, 7, 4, 1, 9, 6, 3, 5 }, 
+		{ 3, 4, 5, 2, 8, 6, 1, 7, 9 } };
+
+		try {
+	 Sudoku s1 = new Sudoku(puzzle);
+	 s1.ShuffleRegion(8);
+	 s1.printPuzzle();			 
+} 	catch (Exception e) {
+	fail("Failed to shuffle");
+}
+}
+
+	@Test
+	public void FillDiagonalsTest_1()
+{
+
+
+		int[][] puzzle = {
+		{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+		{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+		{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+		{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+		{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+		{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+		{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+		{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+		{ 0, 0, 0, 0, 0, 0, 0, 0, 0 } };
+
+		try {
+	 Sudoku s1 = new Sudoku(puzzle);
+	 s1.FillDiagonalRegions();
+	 s1.printPuzzle();			 
+} catch (Exception e) {
+	fail("Failed to shuffle");
+}
+}
+
+	@Test
+	
+	public void FillDiagonalsTest_2()
+{
+
+
+		int[][] puzzle = {
+		{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+		{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+		{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+		{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+		{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+		{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+		{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+		{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+		{ 0, 0, 0, 0, 0, 0, 0, 0, 0 } };
+
+try {
+	 Sudoku s1 = new Sudoku(puzzle);
+	 s1.FillDiagonalRegions();
+	 s1.printPuzzle();			 
+} catch (Exception e) {
+	fail("Failed to shuffle");
+}
+}
+	
+	@Test
+	public void setRegionsTest_1()
+	{
+		
+		
+		int[][] puzzle = {
+				{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+				{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+				{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+				{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+				{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+				{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+				{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+				{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+				{ 0, 0, 0, 0, 0, 0, 0, 0, 0 } };
+		
+		try {
+			 Sudoku s1 = new Sudoku(puzzle);
+			 s1.setRegion(1);
+			 s1.printPuzzle();			 
+		} catch (Exception e) {
+			fail("Failed to shuffle");
+		}
+	}
+	
+	@Test
+	public void setRegionsTest_2()
+	{
+		
+		
+		int[][] puzzle = {
+				{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+				{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+				{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+				{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+				{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+				{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+				{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+				{ 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+				{ 0, 0, 0, 0, 0, 0, 0, 0, 0 } };
+		
+		try {
+			 Sudoku s1 = new Sudoku(puzzle);
+			 s1.setRegion(5);
+
+			 s1.printPuzzle();			 
+		} catch (Exception e) {
+			fail("Failed to shuffle");
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+}
+
+
 
 
 	

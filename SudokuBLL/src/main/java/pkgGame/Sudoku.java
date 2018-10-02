@@ -272,7 +272,7 @@ public class Sudoku extends LatinSquare {
 
 //Start of Lab 3
 //Made all methods public because could not test private methods without reflection
-//Never covered reflection
+//Was not sure how to use reflection, it was not covered in class
 	
 	public int getRegionNbr(int iCol, int iRow) {
 		
